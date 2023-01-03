@@ -7,7 +7,7 @@
 :root {
   --dark-background-color: #1f2937;
   --secondary-text: #e5e7ebb0;
-  --main-text: 48px extra-bold #f9faf8;
+  /* --main-text: 48px extra-bold #f9faf8; */
 }
 
 .button {
@@ -16,6 +16,7 @@
   text-decoration: none;
   padding: 5px 30px;
   border-radius: 7.5px;
+  min-width: 115px;
 }
 
 body {
@@ -23,11 +24,18 @@ body {
   background: var(--dark-background-color);
 }
 
+/* Header */
 header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
   color: #f9faf8;
   display: flex;
   justify-content: space-between;
-  margin: 10px 400px 10px 400px;
+  margin: 10px 0px 10px 0px;
+  width: 60%;
 }
 
 header h3 {
@@ -43,14 +51,22 @@ header a {
 
 /* Section 1 */
 main #section-1 {
-  margin: 100px 400px 10px 400px;
+  padding: 100px 0px 100px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#section-1 #section-1-container {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 100px;
+  height: 100%;
+  width: 60%;
 }
 
 #section-1 #this-website-is-awesome {
-  width: 36%;
+  width: 400px;
+  max-width: 400px;
+  padding-right: 20px;
 }
 
 #section-1 h1 {
@@ -65,7 +81,7 @@ main #section-1 {
 
 #section-1 #placeholder {
   background: #6d747d;
-  width: 45%;
+  width: 500px;
   display: flex;
 }
 
@@ -78,6 +94,10 @@ main #section-1 {
 #section-2 {
   background: #f9faf8;
   height: 400px;
+}
+
+#section-2-container {
+  width: 60%;
 }
 
 #section-2 h2 {
@@ -124,21 +144,34 @@ main #section-1 {
   align-items: center;
 }
 
-#section-3 #container {
+#section-3 #section-3-container {
   display: flex;
   flex-direction: column;
-  width: 43%;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  padding: 0 155px;
+  width: 60%;
+  height: 100%;
+}
+
+#section-3 #text-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 #section-3 #quote {
   font-style: italic;
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 
 #section-3 #thor {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   font-weight: bold;
   font-size: 18px;
+  min-width: 250px;
   padding-right: 40px;
 }
 
@@ -146,16 +179,18 @@ main #section-1 {
 #section-4 {
   background: #f9faf8;
   height: 300px;
+  display: flex;
+  justify-content: center;
 }
 
-#section-4 #container {
-  margin: 0px 400px;
+#section-4 #section-4-container {
+  width: 60%;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-#section-4 #container #cta {
+#section-4 #section-4-container #cta {
   background: #3882f6;
   height: 50%;
   border-radius: 10px;
@@ -167,10 +202,14 @@ main #section-1 {
   padding: 0 135px;
 }
 
-#section-4 #container #cta .button {
+#section-4 #section-4-container #cta .button {
   border: 1px solid;
   border-radius: 5px;
   height: 32.5px;
+}
+
+#section-4 #section-4-container #cta #cta-text {
+  padding: 10px;
 }
 
 /* Footer */
@@ -182,4 +221,296 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Media Queries */
+
+/* Mobile */
+@media (min-width: 280px) and (max-width: 480px) {
+  .header-container {
+    color: #f9faf8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+    width: 60%;
+    padding: 20px 0 0 0;
+  }
+
+  .header-container h3 {
+    padding-bottom: 20px;
+  }
+
+  .header-container nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -80px;
+  }
+
+  .header-container nav a {
+    padding-bottom: 15px;
+  }
+
+  #section-1 #section-1-container {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #section-1 #section-1-container #this-website-is-awesome {
+    width: 130%;
+    padding-left: 20px;
+  }
+
+  #section-1 #section-1-container #this-website-is-awesome h1 {
+    width: 100%;
+    font-size: 40px;
+  }
+
+  #section-1 #section-1-container #placeholder {
+    height: 200px;
+    margin-top: 50px;
+    width: 100%;
+    padding: 0px 50px;
+  }
+
+  #section-2 {
+    height: 1150px;
+  }
+
+  #section-2 .box-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #section-2 .empty-square-with-text {
+    margin-bottom: -25px;
+  }
+
+  #section-3 #quote {
+    font-size: 1.75rem;
+  }
+
+  #section-3 #thor {
+    padding-right: 0px;
+    padding-top: 10px;
+  }
+
+  #section-4 #section-4-container {
+    width: 60%;
+    min-width: 204px;
+  }
+
+  #section-4 #section-4-container #cta {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 30px 10px;
+    text-align: center;
+    line-height: 2.2;
+    height: 80%;
+  }
+
+  #section-4 #cta .button {
+    line-height: 1;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header-container {
+    color: #f9faf8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+    padding: 20px 0 0 0;
+  }
+
+  .header-container h3 {
+    padding-bottom: 20px;
+  }
+
+  #section-1 #section-1-container {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #section-1 #section-1-container #this-website-is-awesome {
+    width: 120%;
+    padding-left: 20px;
+  }
+
+  #section-1 #section-1-container #placeholder {
+    height: 200px;
+    margin-top: 50px;
+    width: 107.5%;
+  }
+
+  #section-2 {
+    height: 650px;
+  }
+
+  #section-3 #quote {
+    font-size: 1.75rem;
+  }
+
+  #section-3 #thor {
+    padding-right: 0px;
+    padding-top: 10px;
+  }
+
+  #section-4 #section-4-container {
+    width: 60%;
+  }
+
+  #section-4 #section-4-container #cta {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 30px 10px;
+    text-align: center;
+    line-height: 2.2;
+    height: 70%;
+  }
+
+  #section-4 #cta .button {
+    line-height: 1;
+  }
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-container {
+    color: #f9faf8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+    width: 60%;
+    padding: 20px 0 0 0;
+  }
+
+  .header-container h3 {
+    padding-bottom: 20px;
+  }
+
+  #section-1 #section-1-container {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #section-1 #section-1-container #this-website-is-awesome {
+    padding-left: 20px;
+  }
+
+  #section-1 #section-1-container #placeholder {
+    height: 200px;
+    margin-top: 50px;
+  }
+
+  #section-2 {
+    height: 650px;
+  }
+
+  #section-3 #quote {
+    font-size: 1.75rem;
+  }
+
+  #section-3 #thor {
+    padding-right: 0px;
+    padding-top: 10px;
+  }
+
+  #section-4 #section-4-container {
+    width: 66%;
+  }
+
+  #section-4 #section-4-container #cta {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 30px 10px;
+    text-align: center;
+    line-height: 2.2;
+    height: 60%;
+  }
+
+  #section-4 #cta .button {
+    line-height: 1;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .header-container {
+    align-items: center;
+  }
+
+  #section-1 #section-1-container {
+    min-width: 875px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #section-1 #section-1-container #this-website-is-awesome {
+    padding-left: 20px;
+  }
+
+  #section-1 #section-1-container #placeholder {
+    height: 200px;
+    margin-top: 50px;
+  }
+
+  #section-2 #first-pair {
+    display: flex;
+  }
+
+  #section-2 #second-pair {
+    display: flex;
+  }
+
+  #section-3 #quote {
+    min-width: 400px;
+  }
+
+  #section-4 #section-4-container {
+    min-width: 875px;
+  }
+}
+
+/* TV */
+@media (min-width: 1201px) {
+  .header-container {
+    align-items: center;
+  }
+
+  #section-1 #section-1-container {
+    min-width: 875px;
+  }
+
+  #section-2 #first-pair {
+    display: flex;
+  }
+
+  #section-2 #second-pair {
+    display: flex;
+  }
+
+  #section-3 #quote {
+    min-width: 400px;
+  }
+
+  #section-4 #section-4-container {
+    min-width: 875px;
+  }
 }
